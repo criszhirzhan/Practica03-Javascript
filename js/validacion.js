@@ -10,6 +10,8 @@ function validarCamposObligatorios (){
                 elemento.style.border="1px red solid"
                 document.getElementById("mensajeCedula").innerHTML="El campo es obligatorio"
                 document.getElementById("mensajeCedula").style.color="red"
+
+                
             }
             if(elemento.id=='nombres'){
                 nombres=elemento.id.value;
@@ -69,6 +71,7 @@ function ValidarLetras(event,label,elemento){
     }else{
         span.innerHTML="Ingrese Letras"
         span.style.display="block"
+        span.style.color="red"
         let frase=elemento.value;
         frase=frase.substring(0,frase.length-1)
         elemento.value=frase
@@ -79,6 +82,7 @@ function ValidarLetras(event,label,elemento){
     if(wordCount>2){
         span.innerHTML="Ingrese solo dos nombres"
         span.style.display="block"
+        span.style.color="red"
         let frase=elemento.value;
         frase=frase.substring(0,frase.length-2)
         elemento.value=frase
@@ -94,6 +98,7 @@ function ValidarNumeros(event,label,elemento){
         span.style.display="none";
     }else{
         span.innerHTML="Ingrese Numeros"
+        span.style.color="red"
         span.style.display="block"
         let cantidad=elemento.value;
         cantidad=cantidad.substring(0,cantidad.length-1)
@@ -151,6 +156,7 @@ function validar(label,elemento) {
     }else{
         span.innerHTML="Ingrese Numeros"
         span.style.display="block"
+        span.style.color="red"
         let cantidad=elemento.value;
         cantidad=cantidad.substring(0,cantidad.length-1)
         elemento.value=cantidad
@@ -160,6 +166,7 @@ function validar(label,elemento) {
         validar(label,elemento);
         span.innerHTML="Solo ingrese diez numeros"
         span.style.display="block"
+        span.style.color="red"
         let cantidad=elemento.value;
         cantidad=cantidad.substring(0,cantidad.length-1)
         elemento.value=cantidad

@@ -56,6 +56,7 @@ h1{
 .anterior{
     background-color: teal;
     border-radius: 1rem;
+    color: rgb(0, 0, 0);;
 
 }
 
@@ -72,6 +73,7 @@ h1{
 .siguiente{
     background-color: teal;
     border-radius: 1rem;
+    color: rgb(0, 0, 0);
 
 }
 
