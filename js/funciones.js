@@ -1,38 +1,4 @@
-// function saludar(saludo){
-//     alert(saludo)
-// }
 
-// function suma(){
-//     var n1= Number(document.getElementById("numero1").value)
-//     var n2= Number(document.getElementById("numero2").value)
-
-//     var res= n1+n2
-
-//     document.getElementById("resultado").value=res
-
-// }
-
-// function select(ctrl){
-//     console.log(ctrl)
-//     alert("Hola......")
-//     for(i=0;i<ctrl.length;i++)
-//         // if(ctrl[i].checked) return ctrl[i].value;
-//         if (ctrl[0].checked){
-//             suma()
-//         }
-//         // if (ctrl[1].checked){
-//         //     suma()
-//         // }
-//         // if (ctrl[2].checked){
-//         //     suma()
-//         // }
-//         // if (ctrl[3].checked){
-//         //     suma()
-//         // }
-
-// }
-
-//Declaramos variables
 var operandoa;
 var operandob;
 var operacion;
@@ -59,11 +25,6 @@ function init() {
 
 }
 
-//Eventos de click
-
-// raiz.onclick = function (e) {
-//     resultado.textContent = resultado.textContent ;
-// }
 
 punto.onclick = function (e) {
     resultado.textContent = resultado.textContent + ".";
