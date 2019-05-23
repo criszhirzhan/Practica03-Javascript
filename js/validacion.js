@@ -110,8 +110,6 @@ function ValidarNumeros(event, label, elemento) {
 
     }
 
-
-
 }
 
 function validar(label, elemento) {
@@ -180,6 +178,8 @@ function ValidarCorreo(event, label, elemento) {
     let caracter = event.which || event.keyCode;
     let correo = elemento.value;
     let email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    span.innerHTML = ""
+    span.style.display = "block"
 
     if (!email.test(correo)) {
         span.innerHTML = "Correo Invalido"
@@ -203,22 +203,58 @@ function ValidarCorreo(event, label, elemento) {
 
 function validarFecha(event, label, element) {
     let span = document.getElementById(label);
-    var formato = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
     let caracter = event.which || event.keyCode;
     let elemento = element.value
-    if ((elemento.match(formato)) && (elemento != '')) {
-        span.innerHTML = "Fecha Valida"
-        span.style.display = "block"
-        span.style.color = "green"
-        // return true;
+
+    if (validarFormatoFecha(element)) {
+        if (fechaExistente(elemento)) {
+            span.innerHTML = "Fecha Valida"
+            span.style.display = "block"
+            span.style.color = "green"
+        } else {
+            span.innerHTML = "Fecha Invalida"
+            span.style.display = "block"
+            span.style.color = "red"
+        }
     } else {
-        span.innerHTML = "Fecha Invalida"
+        span.innerHTML = "Formato Invalido"
+        span.style.display = "block"
+        span.style.color = "red";
+    }
+
+    if (elemento.length >= 11) {
+        span.innerHTML = "Fecha fuera de rango"
         span.style.display = "block"
         span.style.color = "red"
-        // return false;
+        let cantidad = element.value;
+        cantidad = cantidad.substring(0, cantidad.length - 1)
+        element.value = cantidad
     }
 
 }
+
+function validarFormatoFecha(element) {
+    let elemento = element.value
+    var formato = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+    if ((elemento.match(formato)) && (elemento != '')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function fechaExistente(fecha) {
+    var fechaf = fecha.split("/");
+    var day = fechaf[0];
+    var month = fechaf[1];
+    var year = fechaf[2];
+    var date = new Date(year, month, '0');
+    if ((day - 0) > (date.getDate() - 0)) {
+        return false;
+    }
+    return true;
+}
+
 
 
 
